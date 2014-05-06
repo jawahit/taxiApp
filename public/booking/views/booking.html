@@ -1,6 +1,6 @@
 <section data-ng-controller="BookingCtrl">
 
-	<form >
+	<form name="bookingform" novalidate>
 
 
 <!-- Form Name -->
@@ -8,24 +8,24 @@
 
 		<div class="row">
 			<div class="col-md-6">
-				<div class="form-group">
+				<div class="form-group" ng-class="{ 'has-error' : bookingform.pickup.$invalid && !bookingform.pickup.$pristine }">
 					<label class="control-label" for="name">Pickup Address</label>
 					<div>
-						<input id="pickup" name="pickup" type="text"
-							placeholder="Enter Your Pickup Location" class="form-control" required="">
-
+						<input id="pickup" name="pickup" type="text" ng-model="booking.pickup" googleplace
+							placeholder="Enter Your Pickup Location" class="form-control" required>
+						<p ng-show="bookingform.pickup.$invalid && !bookingform.pickup.$pristine" class="help-block"> is required.</p>
 					</div>
 				</div>
 			</div>
 
 
-			<div class="form-group">
+			<div class="form-group" ng-class="{ 'has-error' : bookingform.dropoff.$invalid && !bookingform.dropoff.$pristine }">
 				<div class="col-md-6">
 					<label class="control-label" for="email">Drop Off Address</label>
 					<div>
-						<input id="dropoff" name="pickup" type="text"
+						<input id="dropoff" name="dropoff" type="text" ng-model="booking.dropoff" googleplace
 							placeholder="Enter your Drop Off Location" class="form-control"	required="">
-
+						<p ng-show="bookingform.dropoff.$invalid && !bookingform.dropoff.$pristine" class="help-block"> is required.</p>
 					</div>
 				</div>
 			</div>
@@ -33,22 +33,24 @@
 		
 		<div class="row">
 			<div class="col-md-6">
-				<div class="form-group">
+				<div class="form-group" ng-class="{ 'has-error' : bookingform.pickupdatetime.$invalid && !bookingform.pickupdatetime.$pristine }">
 					<label class="control-label" for="name">Date & Time of Pickup </label>
 					 <div>
 						<div class="dropdown">
 							<a class="dropdown-toggle " id="dropdown2" role="button"
 								data-toggle="dropdown" data-target="#" href="#">
 								<div class="input-group">
-									<input type="text" class="form-control calendarbox"
-										data-ng-model="data.dateDropDownInput"><!-- <span
+									<input type="text" name="pickupdatetime" id="pickupdatetime" class="form-control calendarbox"
+										placeholder="Pick your Date & Time" data-ng-model="booking.pickupdatetime" required>
+										<p ng-show="bookingform.pickupdatetime.$invalid && !bookingform.pickupdatetime.$pristine" class="help-block"> is required.</p>
+										<!-- <span
 										class="input-group-add-on"><i
 										class="glyphicon glyphicon-calendar" ></i></span> -->
 								</div>
 							</a>
 							<ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
 							<!-- data-datetimepicker-config="{ dropdownSelector: '#dropdown2' }"  -->
-								<datetimepicker data-ng-model="data.dateDropDownInput" />
+								<datetimepicker data-ng-model="booking.pickupdatetime" />
 							</ul>
 						</div>
 					</div> 
@@ -62,9 +64,16 @@
 				<label class="control-label" for="passengers">No of
 					Passengers</label>
 				<div>
-					<select id="passengers" name="passengers" class="form-control">
-						<option>Option one</option>
-						<option>Option two</option>
+					<select id="passengers" name="passengers" ng-model="booking.passengers" class="form-control">
+						<option value="1">1</option>
+						<option value="2">2</option>
+						<option value="3">3</option>
+						<option value="4">4</option>
+						<option value="5">5</option>
+						<option value="6">6</option>
+						<option value="7">7</option>
+						<option value="8">8</option>
+						<option value="9">9</option>
 					</select>
 				</div>
 			</div>
@@ -74,38 +83,42 @@
 
 		<div class="row">
 			<div class="col-md-6">
-				<div class="form-group">
+				<div class="form-group" ng-class="{ 'has-error' : bookingform.name.$invalid && !bookingform.name.$pristine }">
 					<label class="control-label" for="name">Name</label>
 					<div>
-						<input id="name" name="name" type="text"
-							placeholder="Enter Your Name" class="form-control" required="">
-
+						<input id="name" name="name" type="text" ng-model="booking.name"
+							placeholder="Enter Your Name" class="form-control" required ng-minlength="4" ng-maxlength="20">
+						<p ng-show="bookingform.name.$error.minlength" class="help-block"> too short. Min 4 char</p>
+       				    <p ng-show="bookingform.name.$error.maxlength" class="help-block"> too long. Max 20 char</p>
+       				    <p ng-show="bookingform.name.$invalid && !bookingform.name.$pristine && bookingform.name.$error.required" class="help-block"> is required.</p>
 					</div>
 				</div>
 			</div>
 
 
-			<div class="form-group">
+			<div class="form-group" ng-class="{ 'has-error' : bookingform.emailid.$invalid && !bookingform.emailid.$pristine }">
 				<div class="col-md-6">
 					<label class="control-label" for="email">Email ID</label>
 					<div>
-						<input id="email" name="email" type="text"
+						<input id="emailid" name="emailid" type="email" ng-model="booking.emailid"
 							placeholder="Enter your Email Address" class="form-control"
-							required="">
-
+							required ng-pattern="/^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$/">
+						<p ng-show="bookingform.emailid.$error.pattern" class="help-block">Enter a valid email.</p>
+						 <p ng-show="bookingform.emailid.$invalid && !bookingform.emailid.$pristine && bookingform.emailid.$error.required" class="help-block"> is required.</p> 
 					</div>
 				</div>
 			</div>
 		</div>
 
 	<div class="row">
-			<div class="form-group">
+			<div class="form-group" ng-class="{ 'has-error' : bookingform.phonenumber.$invalid && !bookingform.phonenumber.$pristine }">
 				<div class="col-md-6">
-					<label class="control-label" for="phonenumber">Phone</label>
+					<label class="control-label" for="phonenumber">Phone Number</label>
 					<div>
-						<input id="phonenumber" name="phonenumber" type="text"
-							placeholder="Enter your Phone Number" class="form-control">
-	
+						<input id="phonenumber" name="phonenumber" type="text" ng-model="booking.phone"
+							required placeholder="Enter your Phone Number" class="form-control" ng-pattern="/^[1-9][0-9]{0,2}(?:,?[0-9]{3}){0,3}(?:\.[0-9]{1,2})?$/">
+						<p ng-show="bookingform.phonenumber.$invalid && !bookingform.phonenumber.$pristine && bookingform.phonenumber.$error.required"  class="help-block"> is required.</p>
+						<p ng-show="bookingform.phonenumber.$error.pattern" class="help-block">Not valid Phone number!</p>
 					</div>
 				</div>
 			</div>
@@ -114,21 +127,12 @@
 		
 				<div >
 				<div>
-					<button id="submit" name="submit" class="btn btn-success buttongroups" data-ng-click="submit(data)">Submit</button>
+					<button id="submit" name="submit" class="btn btn-success  buttongroups" ng-disabled="bookingform.$invalid" data-ng-click="create()">Submit</button>
 					<button id="cancel" name="cancel" class="btn btn-inverse">Cancel</button>
 				</div>
 				</div>
 			</div>
 		</div>
-
-
-
-
-
-
-
-
-
 	</form>
 
 </section>

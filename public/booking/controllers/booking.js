@@ -13,10 +13,11 @@ function WizardCtrl($scope,$stateParams){
 
 angular.module('taxiapp.booking',[]).controller('BookingCtrl',BookingCtrl);
 
-function BookingCtrl($scope,$stateParams){
-	$scope.submit= function(data){
-		alert(''+data.dateDropDownInput);
-	}
+function BookingCtrl($scope,$stateParams,$location,$http,BookingService){
+
+  	$scope.create = function(){
+  		BookingService.create($scope.booking);
+	};
 }
 
 

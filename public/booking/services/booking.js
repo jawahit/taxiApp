@@ -1,17 +1,33 @@
 'use strict';
 
-//Steps service used for steps calculate for booking
-/*angular.module('taxiapp.booking').factory('Steps',function() {
-	var steps=['one', 'two', 'three'];
-	
-	return{
+
+//Booking service used for articles REST endpoint
+angular.module('taxiapp.booking').factory('BookingServiceResource', ['$resource', function($resource) {
+    return $resource('articles/:articleId', {
+        bookingId: '@_id'
+    }, {
+        update: {
+            method: 'PUT'
+        }
+    });
+}]);
+
+
+angular.module('taxiapp.booking').service('BookingService', ['$http', function($http) {
+    
+	this.create = function (data){
+		alert(data.name);
 		
-		isFirstStep:function(step){
-			return step === 0;
-		},
+		$http({
+            url: '',
+            method: "POST",
+            data: data
+        }).success(function (data, status, headers, config) {
+                $scope.booking = data; // assign  $scope.persons here as promise is resolved here 
+            }).error(function (data, status, headers, config) {
+                $scope.status = status;
+            });
+		return data;
+	};
 	
-	     isLastStep : function(step) {
-	    	 return step === (steps.length - 1);
-	     }
-	}
-});*/
+}]);
