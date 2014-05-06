@@ -1,19 +1,23 @@
 'use strict';
 
-angular.module('mean.system').controller('HeaderController', ['$scope', '$rootScope', 'Global', 'Menus',
+angular.module('taxiapp.system').controller('HeaderController', ['$scope', '$rootScope', 'Global', 'Menus',
     function($scope, $rootScope, Global, Menus) {
         $scope.global = Global;
         $scope.menus = {};
 
         // Default hard coded menu items for main menu
         var defaultMainMenu = [{
-            'roles': ['authenticated'],
+            'roles': ['annonymous'],
             'title': 'Articles',
             'link': 'all articles'
         }, {
             'roles': ['authenticated'],
             'title': 'Create New Article',
             'link': 'create article'
+        },{
+        	'roles': ['annonymous'],
+            'title': 'Booking',
+            'link': 'new booking'
         }];
 
         // Query menus added by modules. Only returns menus that user is allowed to see.

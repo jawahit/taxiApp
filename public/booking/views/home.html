@@ -1,0 +1,101 @@
+<section  >
+    <div class="container">
+    hello
+    <div  data-ng-controller="WizardCtrl" >
+    <!-- -->
+        <script  type="text/ng-template" id="wizardExample.html">
+
+          <wizard title="My Wizard">
+            <step title="Step 1">
+      				<input type="text" ng-model="bazinga.name" />
+            </step>
+            <step title="Step 2">{{bazinga.name}}
+              	age :<input type="text" ng-model="bazinga.age" />
+            </step>
+            <step title="Step 3">Step 3
+             Summary :
+             Name : {{bazinga.name}}
+             Age : {{bazinga.age}}
+            </step>
+          </wizard>
+        </script>
+        
+        <script type="text/ng-template" id="wizardTemplate.html">
+          <div>
+					<div class="row form-group">
+				<div class="col-xs-12">
+					<ul class="nav nav-pills nav-justified thumbnail setup-panel">
+						<li ng-disabled="currentStepIndex != 0">
+							<h4 class="list-group-item-heading "><span class="glyphicon glyphicon-globe"></span> Step 1</h4>
+							<p class="list-group-item-text">Select your Locations</p>
+						</li>
+						<li ng-disabled="currentStepIndex != 1">
+							<h4 class="list-group-item-heading"><span class="glyphicon glyphicon-user"></span> Step 2</h4>
+							<p class="list-group-item-text">User Info</p>
+						</li>
+						<li ng-disabled="currentStepIndex != 2">
+							<h4 class="list-group-item-heading"><span class="glyphicon glyphicon-stop"></span> Step 3</h4>
+							<p class="list-group-item-text">Payment Options</p>
+						</li>
+					</ul>
+				</div>
+	    </div>
+			<div class="row setup-content" >
+                  <div class="col-xs-12">
+                        <div class="col-md-12 well text-center">
+        			       <div ng-transclude></div>
+			            </div>
+                  </div>
+            </div>
+            <div >
+          		<button type="button" class="btn btn-info" ng-disabled="isFirstStep()" ng-click="previousStep()">Previous</button>
+          		<button type="button" class="btn btn-primary" ng-hide="isLastStep()" ng-click="nextStep()">Next</button>
+          		<button type="button" class="btn btn-success" ng-show="isLastStep()" ng-click="submit()">Submit</button>
+            </div>
+          </div>  
+        </script>
+        
+        
+    </div>
+	<!-- <div class="row form-group">
+        <div class="col-xs-12">
+            <ul class="nav nav-pills nav-justified thumbnail setup-panel">
+                <li class="active"><a href="#step-1">
+                    <h4 class="list-group-item-heading "><span class="glyphicon glyphicon-globe"></span> Step 1</h4>
+                    <p class="list-group-item-text">Select your Locations</p>
+                </a></li>
+                <li class="disabled"><a href="#step-2">
+                    <h4 class="list-group-item-heading"><span class="glyphicon glyphicon-user"></span> Step 2</h4>
+                    <p class="list-group-item-text">User Info</p>
+                </a></li>
+                <li class="disabled"><a href="#step-3">
+                    <h4 class="list-group-item-heading"><span class="glyphicon glyphicon-stop"></span> Step 3</h4>
+                    <p class="list-group-item-text">Payment Options</p>
+                </a></li>
+            </ul>
+        </div>
+	</div>
+    <div class="row setup-content" id="step-1">
+        <div class="col-xs-12">
+            <div class="col-md-12 well text-center">
+                <h1> STEP 1</h1>
+                <button id="activate-step-2" class="btn btn-primary btn-lg">Activate Step 2</button>
+            </div>
+        </div>
+    </div>
+    <div class="row setup-content" id="step-2">
+        <div class="col-xs-12">
+            <div class="col-md-12 well">
+                <h1 class="text-center"> STEP 2</h1>
+            </div>
+        </div>
+    </div>
+    <div class="row setup-content" id="step-3">
+        <div class="col-xs-12">
+            <div class="col-md-12 well">
+                <h1 class="text-center"> STEP 3</h1>
+            </div>
+        </div>
+    </div> -->
+</div>
+</section>

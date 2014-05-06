@@ -2,6 +2,7 @@
 	"css": {
 		"public/build/css/dist.min.css": [
 			"public/system/lib/bootstrap/dist/css/bootstrap.css",
+			"public/system/lib/angular-bootstrap-datetimepicker/src/css/datetimepicker.css",
 			"public/**/assets/css/*.css"
 		]
 	},
@@ -13,6 +14,9 @@
 			"public/system/lib/angular-ui-router/release/angular-ui-router.js",
 			"public/system/lib/angular-bootstrap/ui-bootstrap.js",
 			"public/system/lib/angular-bootstrap/ui-bootstrap-tpls.js",
+			"public/system/lib/jquery/dist/jquery.min.js",
+			"public/system/lib/angular-bootstrap-datetimepicker/src/js/datetimepicker.js",
+			"public/system/lib/moment/moment.js",
 			"public/init.js",
 			"public/*/*.js",
 			"public/*/*/*.js",

@@ -1,3 +1,3 @@
 'use strict';
 
-angular.module('mean.system', ['mean.controllers.login','mean-factory-interceptor']);
+angular.module('taxiapp.system', ['mean.controllers.login','mean-factory-interceptor']);

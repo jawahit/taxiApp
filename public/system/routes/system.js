@@ -1,7 +1,7 @@
 'use strict';
 
 //Setting up route
-angular.module('mean.system').config(['$stateProvider', '$urlRouterProvider',
+angular.module('taxiapp.system').config(['$stateProvider', '$urlRouterProvider',
         function($stateProvider, $urlRouterProvider) {
             // For unmatched routes:
             $urlRouterProvider.otherwise('/');
@@ -14,7 +14,11 @@ angular.module('mean.system').config(['$stateProvider', '$urlRouterProvider',
                 })
                 .state('auth', {
                     templateUrl: 'public/auth/views/index.html'
-                });
+                })
+                /*.state('new booking', {
+                    url: '/booking',
+                    templateUrl: 'public/booking/views/home.html'
+                })*/;
         }
     ])
     .config(['$locationProvider',
