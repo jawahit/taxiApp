@@ -3,6 +3,7 @@
 		"public/build/css/dist.min.css": [
 			"public/system/lib/bootstrap/dist/css/bootstrap.css",
 			"public/system/lib/angular-bootstrap-datetimepicker/src/css/datetimepicker.css",
+			"public/system/lib/font-awesome/css/font-awesome.css",
 			"public/**/assets/css/*.css"
 		]
 	},

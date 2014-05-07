@@ -15,23 +15,34 @@ body{ margin-top:20px; }
     }
 
 .calendarbox{
-	
+	width: 30%;
 
 }
+
+
  
   	
 }
 
 .buttongroups{
 	
- 	margin-top: 1px;
-    margin-right: 8px;
-    padding-right: 30px;
-    border-left-width: 1px;
-    margin-left: 346px !important;
+
+    border-left-width: 0px;
+    margin-left: 17px;
 }
 
 .calendarbox{
 	width: 556px !important;
 }
+
+.btn-lg {
+	/* width: 50%; */
+	display: block;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* .buttonwrapper {position: relative;width: 100%;max-width: 980px;margin:10px auto;padding:20px;text-align:center;background-color:rgba(0,0,0,.3);border-radius:10px;}
+.buttonwrapper .featurebuttonlink {text-decoration:none;}
+.buttonwrapper .buttonlink {text-decoration:none;} */
 

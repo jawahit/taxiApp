@@ -1,5 +1,12 @@
 <section data-ng-controller="BookingCtrl">
 
+	<button type="button" class="btn btn-success btn-lg"><i class="icon-phone icon-1x">&nbsp;(xxx) xxx-xxxx</i></button>
+	
+	<!-- <button type="button" class="btn btn-success btn-lg  btn-block"><i class="fa-phone-square"></i>&nbsp;(615) 255-3519</button> -->
+	
+	
+ 		<h2 style="text-align: center;"> or </h2> 
+
 	<form name="bookingform" novalidate>
 
 
@@ -127,7 +134,7 @@
 		
 				<div >
 				<div>
-					<button id="submit" name="submit" class="btn btn-success  buttongroups" ng-disabled="bookingform.$invalid" data-ng-click="create()">Submit</button>
+					<button id="submit" name="submit" class="btn btn-success buttongroups" ng-disabled="bookingform.$invalid" data-ng-click="create()">Submit</button>
 					<button id="cancel" name="cancel" class="btn btn-inverse">Cancel</button>
 				</div>
 				</div>
