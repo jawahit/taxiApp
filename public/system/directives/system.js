@@ -1,5 +1,5 @@
 angular
-.module('taxiapp.system').directive('googleplace', function() {
+.module('taxiapp.system').directive('googlePlace', function() {
     return {
         require: 'ngModel',
         link: function(scope, element, attrs, model) {

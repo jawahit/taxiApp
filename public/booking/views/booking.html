@@ -1,6 +1,8 @@
 <div class="container">
 <section data-ng-controller="BookingCtrl">
      <br/>
+      <br/>
+       <br/>
 	<button type="button" class="btn btn-success btn-lg"><i class="icon-phone icon-1x">&nbsp;(xxx) xxx-xxxx</i></button>
 	
 	<!-- <button type="button" class="btn btn-success btn-lg  btn-block"><i class="fa-phone-square"></i>&nbsp;(615) 255-3519</button> -->
@@ -19,7 +21,7 @@
 				<div class="form-group" ng-class="{ 'has-error' : bookingform.pickup.$invalid && !bookingform.pickup.$pristine }">
 					<label class="control-label" for="name">Pickup Address</label>
 					<div>
-						<input id="pickup" name="pickup" type="text" ng-model="booking.pickup" googleplace
+						<input id="pickup" name="pickup" type="text" ng-model="booking.pickup" google-place
 							placeholder="Enter Your Pickup Location" class="form-control" required>
 						<p ng-show="bookingform.pickup.$invalid && !bookingform.pickup.$pristine" class="help-block"> is required.</p>
 					</div>
@@ -31,7 +33,7 @@
 				<div class="col-md-6">
 					<label class="control-label" for="email">Drop Off Address</label>
 					<div>
-						<input id="dropoff" name="dropoff" type="text" ng-model="booking.dropoff" googleplace
+						<input id="dropoff" name="dropoff" type="text" ng-model="booking.dropoff" google-place
 							placeholder="Enter your Drop Off Location" class="form-control"	required="">
 						<p ng-show="bookingform.dropoff.$invalid && !bookingform.dropoff.$pristine" class="help-block"> is required.</p>
 					</div>
