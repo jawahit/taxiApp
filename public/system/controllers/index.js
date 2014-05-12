@@ -7,16 +7,26 @@ angular.module('taxiapp.system').controller('IndexController', ['$scope', 'Globa
 
 angular.module('taxiapp.system').controller('CarouselCtrl', ['$scope', 'Global', function ($scope, Global) {
 	 $scope.myInterval = 5000;
-	 /* var slides = $scope.slides = [];
-	  $scope.addSlide = function() {
-	    var newWidth = 600 + slides.length;
-	    slides.push({
-	      image: 'http://placehold.it/900x500/auto/',
-	      text: ['More','Extra','Lots of','Surplus'][slides.length % 4] + ' ' +
-	        ['Cats', 'Kittys', 'Felines', 'Cutes'][slides.length % 4]
-	    });
-	  };
-	  for (var i=0; i<4; i++) {
-	    $scope.addSlide();
-	  }*/
+}]);
+
+angular.module('taxiapp.system').controller('ContactCtrl', ['$scope', 'Global','ContactService', function ($scope, Global,ContactService) {
+	$scope.datas={};
+	$scope.successdata=null;
+
+	$scope.create = function(){
+		ContactService.create($scope.contact,function (err,data){
+			if(data.contactConfirmationResponse.status =="Failure"){
+				$scope.failure=true;
+			}else{
+				$scope.success = true;
+				$scope.successdata=data.contactConfirmationResponse;
+			}
+		});
+	};
+	
+	$scope.reset =function(){
+		$scope.contact=null;
+	}
+	
+	
 }]);

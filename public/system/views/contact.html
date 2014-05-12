@@ -1,0 +1,111 @@
+<div class="container">
+<section >
+    
+   <!--     <div class="jumbotron">
+		  <h1>Contact us</h1>
+		  <p>Contacting us to make a taxi cab reservation has never been easier. We are available 24 x 7. If you need to make a taxi cab reservation please call us at</p>
+		  <p><a class="btn  btn-primary"  href="#" role="button"><i class="icon-phone icon-1x">&nbsp;(xxx) xxx-xxxx</i></a></p>
+		  <p style="text-align: center;">or</p></br>
+		  <p> You can book online instantly on any device click below</p>
+		   <p><a class="btn  btn-primary" ui-sref="new booking" role="button">Online Reservation</a></p>
+	   </div> -->
+	   <hr/>
+	   <div class="row aligncenter">
+              	<div class="col-md-12">
+             		 <h1 class="headercontact">Contact us</h1>
+		  <p>Contacting us to make a taxi cab reservation has never been easier. We are available 24 x 7. If you need to make a taxi cab reservation please call us at</p>
+		  <p><a class="btn  btn-primary"  href="#" role="button"><i class="icon-phone icon-1x">&nbsp;(xxx) xxx-xxxx</i></a></p>
+              	</div>
+              	<p style="text-align: center;"><h2>or</h2></p></br>
+              	<div class="col-md-12">
+             		 <p> You can book online instantly on any device click below</p>
+		   <p><a class="btn  btn-primary" ui-sref="new booking" role="button">Online Reservation</a></p>
+              	</div>
+              </div>
+
+
+	   <form name="contactform" data-ng-controller="ContactCtrl" novalidate>
+	   <div id="alertmessagecontact"></div>
+	    <div class="alert alert-dismissable alert-success" ng-show="success">
+ 		 <button type="button" class="close" data-dismiss="alert">x</button>
+  			<strong>Thank You for contacting us !!!</strong> Please check your inbox for Confirmation</a>.
+		</div>
+		  <div class="alert alert-dismissable alert-danger" ng-show="failure">
+ 		 <button type="button" class="close" data-dismiss="alert">x</button>
+  			<strong>Error in saving contact !!!</strong> Please try again or contact (xxx) xxx-xxxx </a>.
+		</div>
+		
+	   		<legend>Contact Form</legend>
+	   		<div class="row">
+		   		<div class="col-md-6">
+					<div class="form-group" ng-class="{ 'has-error' : contactform.name.$invalid && !contactform.name.$pristine }">
+						<label class="control-label" for="name">Name</label>
+						<div>
+							<input id="name" name="name" type="text" ng-model="contact.name"
+								placeholder="Enter Your Name" class="form-control" required ng-minlength="4" ng-maxlength="20">
+							<p ng-show="contactform.name.$error.minlength" class="help-block"> too short. Min 4 char</p>
+	       				    <p ng-show="contactform.name.$error.maxlength" class="help-block"> too long. Max 20 char</p>
+	       				    <p ng-show="contactform.name.$invalid && !contactform.name.$pristine && contactform.name.$error.required" class="help-block"> is required.</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6">
+				<div class="form-group" ng-class="{ 'has-error' : contactform.emailid.$invalid && !contactform.emailid.$pristine }">
+					
+						<label class="control-label" for="email">Email ID</label>
+						<div>
+							<input id="emailid" name="emailid" type="email" ng-model="contact.emailid"
+								placeholder="Enter your Email Address" class="form-control"
+								required ng-pattern="/^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$/">
+							<p ng-show="contactform.emailid.$error.pattern" class="help-block">Enter a valid email.</p>
+							 <p ng-show="contactform.emailid.$invalid && !contactform.emailid.$pristine && contactform.emailid.$error.required" class="help-block"> is required.</p> 
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<div class="row">
+			<div class="col-md-6">
+				<div class="form-group" ng-class="{ 'has-error' : contactform.subject.$invalid && !contactform.subject.$pristine }">
+					<label class="control-label" for="subject">Subject</label>
+					<div>
+						<input id="subject" name="subject" type="text" ng-model="contact.subject"
+							placeholder="Enter Your Subject" class="form-control" required ng-minlength="4" ng-maxlength="20">
+						<p ng-show="contactform.subject.$error.minlength" class="help-block"> too short. Min 5 char</p>
+       				    <p ng-show="contactform.subject.$error.maxlength" class="help-block"> too long. Max 25 char</p>
+       				    <p ng-show="contactform.subject.$invalid && !contactform.subject.$pristine && contactform.subject.$error.required" class="help-block"> is required.</p>
+					</div>
+				</div>
+			</div>
+			
+			<div class="col-md-6">
+				<div class="form-group" ng-class="{ 'has-error' : contactform.message.$invalid && !contactform.message.$pristine }">
+					<label class="control-label" for="message">Message</label>
+					<div>
+						<textarea rows="" cols="" id="message" name="message" type="" ng-model="contact.message"
+							placeholder="Enter Your Message" class="form-control" required ng-minlength="4" ng-maxlength="20"></textarea>
+						<p ng-show="contactform.message.$error.minlength" class="help-block"> too short. Min 5 char</p>
+       				    <p ng-show="contactform.message.$error.maxlength" class="help-block"> too long. Max 50 char</p>
+       				    <p ng-show="contactform.message.$invalid && !contactform.message.$pristine && contactform.message.$error.required" class="help-block"> is required.</p>
+					</div>
+				</div>
+			</div>
+			</div>
+			<div class="btn-group btn-group-justified">
+
+			<div class="form-group pull-right">
+				<div>
+					<button id="submit" name="submit" scroll-on-click href="#alertmessagecontact" click-once="done" class="btn btn-primary buttongroups" ng-disabled="contactform.$invalid" data-ng-click="create()">Submit</button>
+					<button id="cancel" name="cancel" scroll-on-click href="#alertmessagecontact" data-ng-click="reset()" class="btn btn-inverse">Cancel</button>
+				</div>
+			
+			</div>
+
+			</div>
+		
+	   	</form>
+	   
+	   	
+	   	
+</section>    
+</div>   

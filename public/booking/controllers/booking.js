@@ -14,10 +14,24 @@ function WizardCtrl($scope,$stateParams){
 angular.module('taxiapp.booking',[]).controller('BookingCtrl',BookingCtrl);
 
 function BookingCtrl($scope,$stateParams,$location,$http,BookingService){
+	
+	$scope.datas={};
+	$scope.successdata=null;
 
-  	$scope.create = function(){
-  		BookingService.create($scope.booking);
+	$scope.create = function(){
+		BookingService.create($scope.booking,function (err,data){
+			if(data.bookingConfirmationResponse.status =="Failure"){
+				$scope.failure=true;
+			}else{
+				$scope.success = true;
+				$scope.successdata=data.bookingConfirmationResponse;
+			}
+		});
 	};
+	
+	$scope.reset =function(){
+		$scope.booking=null;
+	}
 }
 
 

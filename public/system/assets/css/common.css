@@ -58,5 +58,97 @@ footer p {
 	
 }
 
+.imgres{
 	
+	max-width: 100%; !important;
+	height: auto; !important;
+}
+
+
+@media (max-width: 480px) {
 	
+
+	
+}
+
+.tablecolor{
+	color: #5a5a5a;
+}
+
+.panel-primary{
+	border-color: #5a5a5a;
+}
+.panel-primary > .panel-heading{
+	border-color: #5a5a5a;
+	background-color: #5a5a5a;
+}
+
+.table > tbody {
+	border-color: #ffffff;
+	background-color: #ffffff;
+	
+}
+
+.table > thead {
+		border-color: #5a5a5a;
+	background-color: #5a5a5a;
+	color:#ffffff;
+	
+}
+.jumbotron{
+    padding-left: 60px;
+    padding-top: 48px;
+    border-bottom-width: 3px;
+    padding-bottom: 0px;
+	
+}
+
+.jumbotron p {
+  text-align: center;
+  color:#ffffff;
+  
+}
+
+.container .jumbotron{
+	background-color: black;
+}
+
+body {
+
+  background-color: #000000;
+}
+
+.table-hover > tbody > tr:hover > td, .table-hover > tbody > tr:hover > th{
+	color:black;
+}
+.table > thead > tr > th, .table > tbody > tr > th, .table > tfoot > tr > th, .table > thead > tr > td, .table > tbody > tr > td, .table > tfoot > tr > td{
+	border-top: 1px solid #B1A3A3;
+}
+
+.black{
+	color:black;
+}
+.datetimepicker thead tr:first-child th:hover, .datetimepicker tfoot tr:first-child th:hover{
+	background:#5E5353;
+}
+
+/* .alert-success{
+	background-color:#008cba;
+	border-color:#008cba;
+} */
+.aligncenter{
+	text-align:center;
+	color:#ffffff;
+}
+
+.headercontact{
+	color:#008cba;
+}
+
+.btn{
+	white-space: normal;
+}
+
+.blackbg{
+	background-color: black;
+}

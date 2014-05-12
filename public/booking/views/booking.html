@@ -3,7 +3,7 @@
      <br/>
       <br/>
        <br/>
-	<button type="button" class="btn btn-success btn-lg"><i class="icon-phone icon-1x">&nbsp;(xxx) xxx-xxxx</i></button>
+	<button type="button" class="btn btn-primary btn-lg"><i class="icon-phone icon-1x">&nbsp;(xxx) xxx-xxxx</i></button>
 	
 	<!-- <button type="button" class="btn btn-success btn-lg  btn-block"><i class="fa-phone-square"></i>&nbsp;(615) 255-3519</button> -->
 	
@@ -11,10 +11,18 @@
  		<h2 style="text-align: center;"> or </h2> 
 
 	<form name="bookingform" novalidate>
-
+			<div id="alertmessage"></div>
+		    <div class="alert alert-dismissable alert-success" ng-show="success">
+ 		 <button type="button" class="close" data-dismiss="alert">x</button>
+  			<strong>Your Booking has been confirmed !!!  Please check your inbox for Confirmation  Reference#: {{successdata.bookingId}} </strong></a>.
+		</div>
+		  <div class="alert alert-dismissable alert-danger" ng-show="failure">
+ 		 <button type="button" class="close" data-dismiss="alert">x</button>
+  			<strong>Error in Booking !!!</strong> Please try again or contact (xxx) xxx-xxxx </a>.
+		</div>
 
 <!-- Form Name -->
-<legend>Booking</legend>
+<legend>Online Reservation</legend>
 
 		<div class="row">
 			<div class="col-md-6">
@@ -22,7 +30,7 @@
 					<label class="control-label" for="name">Pickup Address</label>
 					<div>
 						<input id="pickup" name="pickup" type="text" ng-model="booking.pickup" google-place
-							placeholder="Enter Your Pickup Location" class="form-control" required>
+							placeholder="Start Typing Address" class="form-control" required>
 						<p ng-show="bookingform.pickup.$invalid && !bookingform.pickup.$pristine" class="help-block"> is required.</p>
 					</div>
 				</div>
@@ -34,7 +42,7 @@
 					<label class="control-label" for="email">Drop Off Address</label>
 					<div>
 						<input id="dropoff" name="dropoff" type="text" ng-model="booking.dropoff" google-place
-							placeholder="Enter your Drop Off Location" class="form-control"	required="">
+							placeholder="Start Typing Address" class="form-control"	required="">
 						<p ng-show="bookingform.dropoff.$invalid && !bookingform.dropoff.$pristine" class="help-block"> is required.</p>
 					</div>
 				</div>
@@ -137,8 +145,8 @@
 		
 				<div >
 				<div>
-					<button id="submit" name="submit" class="btn btn-success buttongroups" ng-disabled="bookingform.$invalid" data-ng-click="create()">Submit</button>
-					<button id="cancel" name="cancel" class="btn btn-inverse">Cancel</button>
+					<button id="submit" name="submit" class="btn btn-primary buttongroups" click-once="done" scroll-on-click href="#alertmessage" ng-disabled="bookingform.$invalid" data-ng-click="create()">Submit</button>
+					<button id="cancel" name="cancel" class="btn btn-inverse" scroll-on-click href="#alertmessage" data-ng-click="reset()">Cancel</button>
 				</div>
 				</div>
 			</div>

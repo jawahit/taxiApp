@@ -33,7 +33,7 @@ module.exports = {
     smtpdetails:{
     	transporthost : 'smtp.gmail.com"',
         transportport: '465',
-        fromaddress: '',
-        pass:''
+        fromaddress: 'nashvilleprofessionaltaxi@gmail.com',
+        pass:'Professionaltaxi123#'
     }
 };

@@ -76,16 +76,17 @@
           			<a mean-token="item.link" ui-sref='{{item.link}}'>{{item.title}}</a>
       			 </li>
       			 <li class="dropdown">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Services <b class="caret"></b></a>
+                  <a ui-sref="services" class="dropdown-toggle" data-toggle="dropdown">Services <b class="caret"></b></a>
                   <ul class="dropdown-menu">
-                    <li><a href="#">Airport Service</a></li>
-                    <li><a href="#">Package Deliver</a></li>
-                    <li><a href="#">Corporate Accounts</a></li>
-                    <li class="divider"></li>
+                    <li><a scroll-on-click href="#airport" >Airport Service</a></li>
+                    <li><a scroll-on-click href="#package" >Package Deliver</a></li>
+                    <li><a scroll-on-click href="#corporate" >Corporate Accounts</a></li>
+                    <!-- <li class="divider"></li>
                     <li class="dropdown-header">Nav header</li>
                     <li><a href="#">Separated link</a></li>
-                    <li><a href="#">School Runs</a></li>
+                    <li><a href="#">School Runs</a></li> -->
                   </ul>
+                  <li><a ui-sref="contact">Contact</a></li>
               </ul>
             </div>
           </div>

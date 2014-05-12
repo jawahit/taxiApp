@@ -11,18 +11,28 @@ var constant = require('../config/Constant'),
 exports.saveBooking = function(bookingDetails,callBack){
 	
 	var idLength = '7';
-    var bookingId = 'ACC' + randomUtil.getRandomCode(idLength);
+    var bookingId = 'BK' + randomUtil.getRandomCode(idLength);
     var bookingConfirmationResponse ={};
     if(null!= bookingId && null!=bookingDetails){
-    	sendmail(bookingId,bookingDetails,function(response){
-    		callBack(response);
+    	sendmail(createTransport(),bookingMailOptions(bookingDetails,bookingId),bookingId,constant.booking_confirmation,function(response){
+    		bookingConfirmationResponse ={
+    				"bookingConfirmationResponse" :{
+    					"status" :response.confirmationResponse.status,
+    					"message": response.confirmationResponse.message,
+    					"bookingId":response.confirmationResponse.id,
+    					"error":response.confirmationResponse.error
+    				}					
+    			};
+    		callBack(bookingConfirmationResponse);
     	});
+    	
     }else{
     	bookingConfirmationResponse ={
 				"bookingConfirmationResponse" :{
 					"status" :constant.error_status,
 					"message": constant.booking_error_try_again,
-					"bookingId":null
+					"bookingId":null,
+					"error":constant.booking_details_empty
 				}					
 			};
     	callBack(bookingConfirmationResponse);
@@ -30,31 +40,82 @@ exports.saveBooking = function(bookingDetails,callBack){
     
 };
 
-var sendmail = function(bookingId,bookingDetails,callback) {
-
-var smtpTransport = nodemailer.createTransport("SMTP",{
-    service: "Gmail",
-    auth: {
-        user: config.smtpdetails.fromaddress,
-        pass: config.smtpdetails.pass
+exports.saveContact = function(contactDetails,callBack){
+	
+	var idLength = '7';
+    var contactId = 'CT' + randomUtil.getRandomCode(idLength);
+    var contactConfirmationResponse ={};
+    if(null!= contactId && null!=contactDetails){
+    	sendmail(createTransport(),contactMailOptions(contactDetails,contactId),contactId,constant.contact_confirmation,function(response){
+    		contactConfirmationResponse ={
+    				"contactConfirmationResponse" :{
+    					"status" :response.confirmationResponse.status,
+    					"message": response.confirmationResponse.message,
+    					"contactId":response.confirmationResponse.id,
+    					"error":response.confirmationResponse.error
+    				}					
+    			};
+    		callBack(contactConfirmationResponse);
+    	});
+    }else{
+    	contactConfirmationResponse ={
+				"contactConfirmationResponse" :{
+					"status" :constant.error_status,
+					"message": constant.contact_error_try_again,
+					"contactId":null,
+					"error":constant.contact_details_empty
+				}					
+			};
+    	callBack(contactConfirmationResponse);
     }
-});
+    
+};
 
-//setup e-mail data with unicode symbols
-var mailOptions = {
-    from: config.smtpdetails.fromaddress, // sender address
-    to: bookingDetails.emailid+","+config.smtpdetails.fromaddress, // list of receivers
-    subject: constant.booking_confirmation_subject, // Subject line
-    text: "Booking Confirmed", // plaintext body
-    html: "<b>Booking Confirmed + </b>"+bookingDetails.name+"Booking id:"+bookingId // html body
+
+var createTransport = function(){
+	var transport =nodemailer.createTransport("SMTP",{
+	    service: "Gmail",
+	    auth: {
+	        user: config.smtpdetails.fromaddress,
+	        pass: config.smtpdetails.pass
+	    }
+	});
+	
+	return transport;
 }
 
+var bookingMailOptions = function(bookingDetails,bookingId){
+	
+	var mailOptions = {
+		    from: config.smtpdetails.fromaddress, // sender address
+		    to: bookingDetails.emailid+","+config.smtpdetails.fromaddress, // list of receivers
+		    subject: constant.booking_confirmation_subject, // Subject line
+		    text: "Booking Confirmed", // plaintext body
+		    html: "<b>Booking Confirmed + </b>"+bookingDetails.name+"Booking id:"+bookingId // html body
+		};
+	return mailOptions;
+};
+
+
+var contactMailOptions = function(contactDetails,contactId){
+	
+	var mailOptions = {
+		    from: config.smtpdetails.fromaddress, // sender address
+		    to: contactDetails.emailid+","+config.smtpdetails.fromaddress, // list of receivers
+		    subject: constant.contact_confirmation_subject, // Subject line
+		    text: "Contact Confirmed", // plaintext body
+		    html: "<b>Contact Confirmed + </b>"+contactDetails.name+"Reference Id:"+contactId // html body
+		};
+	return mailOptions;
+};
+
+var sendmail = function(smtpTransport,mailOptions,id,confirmationMsg,callback) {
 //send mail with defined transport object
 	smtpTransport.sendMail(mailOptions, function(error, response){
-		var bookingConfirmationResponse ={};
+		var confirmationResponse ={};
 		if(error){
-			bookingConfirmationResponse ={
-				"bookingConfirmationResponse" :{
+			confirmationResponse ={
+				"confirmationResponse" :{
 					"status" :constant.error_status,
 					"message": constant.invalid_mail_id,
 	                "error": error.message
@@ -62,18 +123,19 @@ var mailOptions = {
 					
 			};
 		}else{
-			bookingConfirmationResponse ={
-					"bookingConfirmationResponse" :{
+			confirmationResponse ={
+					"confirmationResponse" :{
 						"status" :constant.success_status,
-						"message": constant.booking_confirmation,
-						"bookingId": bookingId
+						"message": confirmationMsg,
+						"id": id,
+						"error":null
 					}	
 						
 			};
 		}
 		 smtpTransport.close();
-	     callback(bookingConfirmationResponse);
+	     callback(confirmationResponse);
 	});
 
-}
+};
 

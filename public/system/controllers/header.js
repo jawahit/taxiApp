@@ -6,7 +6,7 @@ angular.module('taxiapp.system').controller('HeaderController', ['$scope', '$roo
         $scope.menus = {};
 
         // Default hard coded menu items for main menu
-        var defaultMainMenu = [{
+        var defaultMainMenu = [/*{
             'roles': ['annonymous'],
             'title': 'Articles',
             'link': 'all articles'
@@ -14,10 +14,14 @@ angular.module('taxiapp.system').controller('HeaderController', ['$scope', '$roo
             'roles': ['authenticated'],
             'title': 'Create New Article',
             'link': 'create article'
+        },*/{
+        	'roles': ['annonymous'],
+            'title': 'Reservation',
+            'link': 'new booking'
         },{
         	'roles': ['annonymous'],
-            'title': 'Booking',
-            'link': 'new booking'
+            'title': 'Fares',
+            'link': 'fares'
         }];
 
         // Query menus added by modules. Only returns menus that user is allowed to see.
