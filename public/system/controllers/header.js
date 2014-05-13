@@ -14,7 +14,7 @@ angular.module('taxiapp.system').controller('HeaderController', ['$scope', '$roo
             'roles': ['authenticated'],
             'title': 'Create New Article',
             'link': 'create article'
-        },*/{
+        },{
         	'roles': ['annonymous'],
             'title': 'Reservation',
             'link': 'new booking'
@@ -22,7 +22,7 @@ angular.module('taxiapp.system').controller('HeaderController', ['$scope', '$roo
         	'roles': ['annonymous'],
             'title': 'Fares',
             'link': 'fares'
-        }];
+        }*/];
 
         // Query menus added by modules. Only returns menus that user is allowed to see.
         function queryMenu(name, defaultMenu) {

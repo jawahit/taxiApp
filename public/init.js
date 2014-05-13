@@ -20,7 +20,7 @@ for (var index in window.modules) {
 }
 
 // Default modules
-var modules = ['ngCookies', 'ngResource', 'ui.router', 'ui.bootstrap','ui.bootstrap.datetimepicker', 'mean.articles', 'mean.auth','taxiapp.system','taxiapp.booking'];
+var modules = ['ngCookies', 'ngResource', 'ui.router', 'ui.bootstrap','ui.bootstrap.datetimepicker','ui.bootstrap.collapse', 'ui.bootstrap.dropdownToggle', 'mean.articles', 'mean.auth','taxiapp.system','taxiapp.booking'];
 modules = modules.concat(packageModules);
 
 // Combined modules
