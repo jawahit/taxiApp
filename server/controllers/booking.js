@@ -8,6 +8,7 @@ var _ = require('lodash'),
 
 exports.createBooking = function(req,res){
 	var booking = req.body;
+	console.log("date & time :"+booking.pickupdatetime);
 	bookingService.saveBooking(booking,function(response){
 		res.jsonp(response);
 	});

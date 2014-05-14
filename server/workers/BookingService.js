@@ -4,6 +4,7 @@
 
 var constant = require('../config/Constant'),
     randomUtil = require('../utils/RandomUtil'),
+    utilMailOptions = require('../utils/MailOptions'),
     nodemailer = require("nodemailer"),
     mail = require("nodemailer").mail,
     config = require('../config/config');
@@ -91,7 +92,7 @@ var bookingMailOptions = function(bookingDetails,bookingId){
 		    to: bookingDetails.emailid+","+config.smtpdetails.fromaddress, // list of receivers
 		    subject: constant.booking_confirmation_subject, // Subject line
 		    text: "Booking Confirmed", // plaintext body
-		    html: "<b>Booking Confirmed + </b>"+bookingDetails.name+"Booking id:"+bookingId // html body
+		    html: utilMailOptions.getConfirmBooking(bookingDetails,bookingId) // html body
 		};
 	return mailOptions;
 };

@@ -156,3 +156,18 @@ body {
 .ashbg{
 	background-color: #6f6f6f;
 }
+
+.airportimg{
+    padding-top: 103px;
+	
+}
+
+.borderblack{
+	border-color:black;
+}
+.carousel .item{
+	background-color: black;
+}
+.carousel-inner > .item > img{
+	height: auto;
+}
