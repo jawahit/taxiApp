@@ -171,3 +171,57 @@ body {
 .carousel-inner > .item > img{
 	height: auto;
 }
+
+.lead{
+	color:#FFFFFF;
+	font-weight: bold;
+}
+ul li{
+	font-size: large;
+}
+
+.navbarheaderfont{
+	font-size: large !important;
+ font-weight: 700 !important;
+}
+
+.black3rdslide{
+	color:rgb(255, 0, 0);
+}
+
+@media only screen and (max-width : 720px) {
+	.black3rdslide{
+	color:#FFFFFF;
+}
+}
+
+.fontbold{
+	font-weight: bold;
+	font-size: large;
+}
+
+.fontxlarge{
+	font-size: x-large;
+}
+
+.onsmall{
+	font-weight: bold;
+}
+
+@media only screen and (max-width : 400px) {
+	.fontxlarge{
+	font-size: medium;
+}
+	.onsmall{
+		font-size: large;
+		color:rgb(255, 0, 0);
+	}
+}
+
+label, .control-label, .help-block, .checkbox, .radio{
+	font-size:18px;
+}
+
+.navbar > .container .navbar-brand, .navbar > .container-fluid .navbar-brand{
+	margin-top:-19px;
+}

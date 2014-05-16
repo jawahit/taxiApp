@@ -1,6 +1,6 @@
 /**
  * New node file
- */
+ *//*
 
 var mongoose = require('mongoose'),
     Schema = mongoose.Schema;
@@ -79,3 +79,4 @@ BookingSchema.path('phone').validate(function(phone) {
 
 mongoose.model('Booking', BookingSchema);
 
+*/

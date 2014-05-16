@@ -51,28 +51,33 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              <a class="navbar-brand" href="#!">Project name</a>
+              <a class="navbar-brand navbarheaderfont" href="#!"><img class="img-circle img-responsive" ng-src="public/system/assets/img/cars/pt_new_logo.png" alt="Generic placeholder image"></a>
             </div>
             <div collapse="isCollapsed" class="navbar-collapse navbar-responsive-collapse collapse bs-js-navbar-collapse">
               <ul class="nav navbar-nav">
                  <!-- <li data-ng-repeat="item in menus.main" ui-route="/{{item.link}}" ng-class="{active: $uiRoute}">
           			<a  mean-token="item.link"  ui-sref='{{item.link}}' ng-click="isCollapsed=true">{{item.title}}</a>
       			 </li> -->
-      			 <li><a ui-sref="new booking" ng-click="isCollapsed=true">Reservation</a></li>
-      			 <li><a ui-sref="fares" ng-click="isCollapsed=true">Fares</a></li>
+      			 <li><a ui-sref="new booking" class="navbarheaderfont" ng-click="isCollapsed=true">Reservation</a></li>
+      			 <li><a ui-sref="fares" class="navbarheaderfont" ng-click="isCollapsed=true">Fares</a></li>
       			 <li class="dropdown">
-                  <a ui-sref="services" class="dropdown-toggle" data-toggle="dropdown">Services <b class="caret"></b></a>
-                  <ul class="dropdown-menu">
-                    <li><a scroll-on-click ng-click="isCollapsed=true" href="#airport" >Airport Service</a></li>
-                    <li><a scroll-on-click ng-click="isCollapsed=true" href="#package" >Package Deliver</a></li>
-                    <li><a scroll-on-click ng-click="isCollapsed=true" href="#corporate" >Corporate Accounts</a></li>
-                     <li><a scroll-on-click ng-click="isCollapsed=true" href="#bp" >Bachelor Party</a></li>
+                  <a ui-sref="services" class="dropdown-toggle navbarheaderfont" data-toggle="dropdown">Services <b class="caret"></b></a>
+                  <ul class="dropdown-menu  navbarheaderfont">
+                    <li><a scroll-on-click ng-click="isCollapsed=true" href="#airport" class="navbarheaderfont">Airport Service</a></li>
+                    <li><a scroll-on-click ng-click="isCollapsed=true" href="#package" class="navbarheaderfont">Package Deliver</a></li>
+                    <li><a scroll-on-click ng-click="isCollapsed=true" href="#corporate" class="navbarheaderfont">Corporate Accounts</a></li>
+                     <li><a scroll-on-click ng-click="isCollapsed=true" href="#bp" class="navbarheaderfont">Bachelor Party</a></li>
+                      <li><a scroll-on-click ng-click="isCollapsed=true" href="#servicearea" class="navbarheaderfont">Service Area</a></li>
                     <!-- <li class="divider"></li>
                     <li class="dropdown-header">Nav header</li>
                     <li><a href="#">Separated link</a></li>
                     <li><a href="#">School Runs</a></li> -->
                   </ul>
-                  <li><a ui-sref="contact" ng-click="isCollapsed=true">Contact</a></li>
+                 
+                  <li><a ui-sref="contact" ng-click="isCollapsed=true" class="navbarheaderfont">Contact</a></li>
+                  <li><a href="#!" ng-click="isCollapsed=true" class="navbarheaderfont"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Reservation &nbsp;<i class="icon-phone icon-1x fontxlarge"></i> (615) 423-7641</a></li>
               </ul>
             </div>
           </div>

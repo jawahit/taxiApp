@@ -19,12 +19,13 @@ function BookingCtrl($scope,$stateParams,$location,$http,BookingService){
 	$scope.successdata=null;
 
 	$scope.create = function(){
-		alert('hi');
-		alert($scope.booking.pickupdatetime);
+		$scope.showprogress=true;
 		BookingService.create($scope.booking,function (err,data){
 			if(data.bookingConfirmationResponse.status =="Failure"){
+				$scope.showprogress=false;
 				$scope.failure=true;
 			}else{
+				$scope.showprogress=false;
 				$scope.success = true;
 				$scope.successdata=data.bookingConfirmationResponse;
 			}

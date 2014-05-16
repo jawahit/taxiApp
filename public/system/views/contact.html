@@ -13,26 +13,34 @@
 	   <div class="row aligncenter">
               	<div class="col-md-12">
              		 <h1 class="headercontact">Contact us</h1>
-		  <p><h4>Contacting us to make a taxi,lemo & shuttle reservation has never been easier. We are available 24 x 7. please call us at</h4></p>
-		  <p><a class="btn  btn-primary"  href="#" role="button"><i class="icon-phone icon-1x">&nbsp;(xxx) xxx-xxxx</i></a></p>
+		  <p><h4 class="fontbold fontxlarge">Contacting us to make a taxi,lemo & shuttle reservation has never been easier. We are available 24 x 7. please call us at</h4></p>
+		  <p><a class="btn  btn-primary"  href="#" role="button"><i class="icon-phone icon-1x fontxlarge"></i>&nbsp;<b class="fontxlarge">(615) 423-7641</b></a></p>
+		  <p><a>Mail To nashvilleprofessionaltaxi@gmail.com</a></p>
               	</div>
               	<p style="text-align: center;"><h2>or</h2></p></br>
               	<div class="col-md-12">
-             		 <p><h4> You can book online instantly on any device click below</h4></p>
-		   <p><a class="btn  btn-primary" ui-sref="new booking" role="button">Online Reservation</a></p>
+             		 <p><h4 class="fontbold fontxlarge"> You can book online instantly on any device click below</h4></p>
+		   <p><a class="btn  btn-primary" ui-sref="new booking" role="button"><i class="icon-book icon-1x fontxlarge"></i>&nbsp;<b class="fontxlarge">Online Reservation</b></a></p>
               	</div>
               </div>
 
 
 	   <form name="contactform" data-ng-controller="ContactCtrl" novalidate>
+	   <div id="gotop"></div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	   <div class="progress progress-striped active" ng-show="showconprogress">
+	  <div class="progress-bar" style="width: 45%"></div>
+	</div>
+		
 	   <div id="alertmessagecontact"></div>
-	    <div class="alert alert-dismissable alert-success" ng-show="success">
+	    <div class="alert alert-dismissable alert-success fontbold" ng-show="success">
  		 <button type="button" class="close" data-dismiss="alert">x</button>
   			<strong>Thank You for contacting us !!!</strong> Please check your inbox for Confirmation</a>.
 		</div>
-		  <div class="alert alert-dismissable alert-danger" ng-show="failure">
+		  <div class="alert alert-dismissable alert-danger fontbold" ng-show="failure">
  		 <button type="button" class="close" data-dismiss="alert">x</button>
-  			<strong>Error in saving contact !!!</strong> Please try again or contact (xxx) xxx-xxxx </a>.
+  			<strong>Error in saving contact !!!</strong> Please try again or contact (615) 423-7641 </a>.
 		</div>
 		
 	   		<legend>Contact Form</legend>
@@ -95,8 +103,8 @@
 
 			<div class="form-group pull-right">
 				<div>
-					<button id="submit" name="submit" scroll-on-click href="#alertmessagecontact" click-once="done" class="btn btn-primary buttongroups" ng-disabled="contactform.$invalid" data-ng-click="create()">Submit</button>
-					<button id="cancel" name="cancel" scroll-on-click href="#alertmessagecontact" data-ng-click="reset()" class="btn btn-inverse">Cancel</button>
+					<button id="submit" name="submit" scroll-on-click href="#gotop" click-once="done" class="btn btn-primary buttongroups" ng-disabled="contactform.$invalid" data-ng-click="create()">Submit</button>
+					<button id="cancel" name="cancel" scroll-on-click href="#gotop" data-ng-click="reset()" class="btn btn-inverse">Cancel</button>
 				</div>
 			
 			</div>

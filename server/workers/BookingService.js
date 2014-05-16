@@ -105,7 +105,7 @@ var contactMailOptions = function(contactDetails,contactId){
 		    to: contactDetails.emailid+","+config.smtpdetails.fromaddress, // list of receivers
 		    subject: constant.contact_confirmation_subject, // Subject line
 		    text: "Contact Confirmed", // plaintext body
-		    html: "<b>Contact Confirmed + </b>"+contactDetails.name+"Reference Id:"+contactId // html body
+		    html: utilMailOptions.getContactMail(contactDetails,contactId) // html body
 		};
 	return mailOptions;
 };

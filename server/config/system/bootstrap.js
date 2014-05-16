@@ -37,7 +37,7 @@ module.exports = function(passport, db) {
         });
 
         // Register app dependency
-        mean.register('app', function() {
+        mean.register('app', function() { 
             return app;
         });
     }

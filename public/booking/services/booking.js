@@ -17,7 +17,6 @@ angular.module('taxiapp.booking').service('BookingService', ['$http','$filter', 
     
 	return {
 		create : function (data,callback){
-			alert($filter('date')(data.pickupdatetime, "MM/dd/yyyy hh:mm:ss a"));
 			data.pickupdatetime=$filter('date')(data.pickupdatetime, "MM/dd/yyyy hh:mm:ss a");
 		 	$http({
 	            url: '/booking',

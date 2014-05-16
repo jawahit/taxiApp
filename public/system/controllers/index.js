@@ -14,10 +14,13 @@ angular.module('taxiapp.system').controller('ContactCtrl', ['$scope', 'Global','
 	$scope.successdata=null;
 
 	$scope.create = function(){
+		$scope.showconprogress=true;
 		ContactService.create($scope.contact,function (err,data){
 			if(data.contactConfirmationResponse.status =="Failure"){
+				$scope.showconprogress=false;
 				$scope.failure=true;
 			}else{
+				$scope.showconprogress=false;
 				$scope.success = true;
 				$scope.successdata=data.contactConfirmationResponse;
 			}

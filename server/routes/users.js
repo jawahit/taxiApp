@@ -6,7 +6,7 @@ var users = require('../controllers/users');
 module.exports = function(app, passport) {
 
     app.get('/logout', users.signout);
-    app.get('/users/me', users.me);
+    app.get('/users/me', users.me); 
 
     // Setting up the users api
     app.post('/register', users.create);
