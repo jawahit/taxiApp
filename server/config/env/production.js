@@ -1,7 +1,7 @@
 'use strict';
 
 module.exports = {
-    db: 'mongodb://localhost/mean-prod',
+	db: 'mongodb://nashville:nashville123#@oceanic.mongohq.com:10048/taxiapp_prod',
     app: {
         name: 'MEAN - A Modern Stack - Production'
     },
@@ -29,5 +29,11 @@ module.exports = {
         clientID: 'API_KEY',
         clientSecret: 'SECRET_KEY',
         callbackURL: 'http://localhost:3000/auth/linkedin/callback'
+    },
+    smtpdetails:{
+    	transporthost : 'smtp.gmail.com"',
+        transportport: '465',
+        fromaddress: '',
+        pass:''
     }
 };
