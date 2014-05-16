@@ -1,19 +1,15 @@
 {
   "name": "mean",
-  "description": "MEAN.io: A fullstack javascript platformed powerd by MongoDB, ExpressJS, AngularJS, NodeJS.",
+  "description": "taxi booking App",
   "version": "0.3.2",
   "private": false,
-  "author": "Linnovate <mean@linnovate.net>",
+  "author": "jawahar <>",
   "contributors": [
-    {"name":"Lior Kesos", "mail": "lior@linnovate.net"},
-    {"name":"Yonatan Ellman", "mail": "yonatan@linnovate.net"},
-    {"name":"Ehud Shahak", "mail": "ehud@linnovate.net"},
-    {"name":"Amos Haviv", "mail": "mail@amoshaviv"},
-    {"name":"Drew Fyock", "mail": "drew@steelbisondev.com"}
+    {"name":"jawahar", "mail": ""}
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/linnovate/mean.git"
+    "url": "https://github.com/jawahit/taxiApp.git"
   },
   "engines": {
     "node": "0.10.x",
@@ -40,6 +36,7 @@
     "meanio": "0.4.x",
     "mongoose": "^3.8.3",
     "passport": "^0.1.18",
+    "nodemailer": "*",
     "passport-facebook": "^1.0.2",
     "passport-github": "^0.1.5",
     "passport-google-oauth": "^0.1.5",
