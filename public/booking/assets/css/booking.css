@@ -1,4 +1,4 @@
-body{ margin-top:20px; }
+/* body{ margin-top:20px; }
 
 
 .calendarbox{
@@ -11,11 +11,11 @@ body{ margin-top:20px; }
 }
 }
 
-/* iPads (portrait and landscape) ----------- */
+iPads (portrait and landscape) -----------
 @media only screen 
 and (min-device-width : 768px) 
 and (max-device-width : 1024px) {
-/* Styles */
+Styles
 .calendarbox{
 	width: 300px !important;
 }
@@ -23,11 +23,11 @@ and (max-device-width : 1024px) {
 }
 
 
-/* iPads (portrait and landscape) ---cal-------- */
+iPads (portrait and landscape) ---cal--------
 @media only screen 
 and (min-device-width : 980px) 
 and (max-device-width : 1199px) {
-/* Styles */
+Styles
 .calendarbox{
 	width: 300px !important;
 }
@@ -43,11 +43,11 @@ and (max-device-width : 1199px) {
     }
     
      html { background: #6f6f6f; }
- /*    input[type=text], textarea {
+    input[type=text], textarea {
         width:75%;
-    } */
+    }
     .buttongroups{
-   /* applied up to 480px */
+   applied up to 480px
  	float:left;
     }
 
@@ -69,13 +69,14 @@ and (max-device-width : 1199px) {
 
 
 .btn-lg {
-	/* width: 50%; */
+	width: 50%;
 	display: block;
     margin: 0 auto;
     text-align: center;
 }
 
-/* .buttonwrapper {position: relative;width: 100%;max-width: 980px;margin:10px auto;padding:20px;text-align:center;background-color:rgba(0,0,0,.3);border-radius:10px;}
+.buttonwrapper {position: relative;width: 100%;max-width: 980px;margin:10px auto;padding:20px;text-align:center;background-color:rgba(0,0,0,.3);border-radius:10px;}
 .buttonwrapper .featurebuttonlink {text-decoration:none;}
-.buttonwrapper .buttonlink {text-decoration:none;} */
+.buttonwrapper .buttonlink {text-decoration:none;}
 
+ */

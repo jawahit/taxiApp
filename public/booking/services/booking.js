@@ -1,4 +1,4 @@
-'use strict';
+/*'use strict';
 
 
 //Booking service used for articles REST endpoint
@@ -32,4 +32,4 @@ angular.module('taxiapp.booking').service('BookingService', ['$http','$filter', 
 		}
 	};
 	
-}]);
+}]);*/

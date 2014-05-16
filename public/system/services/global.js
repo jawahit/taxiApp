@@ -1,4 +1,4 @@
-'use strict';
+/*'use strict';
 
 //Global service for global variables
 angular.module('taxiapp.system').factory('Global', [
@@ -10,4 +10,4 @@ angular.module('taxiapp.system').factory('Global', [
         };
         return _this._data;
     }
-]);
+]);*/

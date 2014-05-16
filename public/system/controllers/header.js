@@ -1,4 +1,4 @@
-'use strict';
+/*'use strict';
 
 angular.module('taxiapp.system').controller('HeaderController', ['$scope', '$rootScope', 'Global', 'Menus',
     function($scope, $rootScope, Global, Menus) {
@@ -6,7 +6,7 @@ angular.module('taxiapp.system').controller('HeaderController', ['$scope', '$roo
         $scope.menus = {};
 
         // Default hard coded menu items for main menu
-        var defaultMainMenu = [/*{
+        var defaultMainMenu = [{
             'roles': ['annonymous'],
             'title': 'Articles',
             'link': 'all articles'
@@ -22,7 +22,7 @@ angular.module('taxiapp.system').controller('HeaderController', ['$scope', '$roo
         	'roles': ['annonymous'],
             'title': 'Fares',
             'link': 'fares'
-        }*/];
+        }];
 
         // Query menus added by modules. Only returns menus that user is allowed to see.
         function queryMenu(name, defaultMenu) {
@@ -51,4 +51,4 @@ angular.module('taxiapp.system').controller('HeaderController', ['$scope', '$roo
         });
 
     }
-]);
+]);*/

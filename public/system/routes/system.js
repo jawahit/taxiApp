@@ -1,4 +1,4 @@
-'use strict';
+/*'use strict';
 
 //Setting up route
 angular.module('taxiapp.system').config(['$stateProvider', '$urlRouterProvider',
@@ -25,10 +25,10 @@ angular.module('taxiapp.system').config(['$stateProvider', '$urlRouterProvider',
                 	url: '/services',
                     templateUrl: 'public/system/views/services.html'
                 })
-                /*.state('new booking', {
+                .state('new booking', {
                     url: '/booking',
                     templateUrl: 'public/booking/views/home.html'
-                })*/;
+                });
         }
     ])
     .config(['$locationProvider',
@@ -36,3 +36,4 @@ angular.module('taxiapp.system').config(['$stateProvider', '$urlRouterProvider',
             $locationProvider.hashPrefix('!');
         }
     ]);
+*/

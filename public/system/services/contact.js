@@ -1,4 +1,4 @@
-angular.module('taxiapp.system').factory('ContactService', ['$http', function($http) {
+/*angular.module('taxiapp.system').factory('ContactService', ['$http', function($http) {
 
 	return {
 		create : function (data,callback){
@@ -16,3 +16,4 @@ angular.module('taxiapp.system').factory('ContactService', ['$http', function($h
 		}
 	};
 }]);
+*/

@@ -1,4 +1,4 @@
-'use strict';
+/*'use strict';
 
 //Setting up route
 angular.module('taxiapp.booking').config(['$stateProvider',
@@ -12,9 +12,9 @@ angular.module('taxiapp.booking').config(['$stateProvider',
                     url: '/booking',
                     templateUrl: 'public/booking/views/booking.html'
                 })
-                /*.state('auth', {
+                .state('auth', {
                     templateUrl: 'public/auth/views/index.html'
-                })*/;
+                });
         }
     ]);
-
+*/

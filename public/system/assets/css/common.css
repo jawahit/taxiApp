@@ -1,4 +1,4 @@
-.page-header {
+/* .page-header {
   padding-bottom: 0;
   margin: 0;
   border-bottom: 0;
@@ -132,10 +132,10 @@ body {
 	background:#5E5353;
 }
 
-/* .alert-success{
+.alert-success{
 	background-color:#008cba;
 	border-color:#008cba;
-} */
+}
 .aligncenter{
 	text-align:center;
 	color:#ffffff;
@@ -224,4 +224,4 @@ label, .control-label, .help-block, .checkbox, .radio{
 
 .navbar > .container .navbar-brand, .navbar > .container-fluid .navbar-brand{
 	margin-top:-19px;
-}
+} */

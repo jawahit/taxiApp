@@ -1,4 +1,4 @@
-angular
+/*angular
 .module('taxiapp.system').directive('googlePlace', function() {
     return {
         require: 'ngModel',
@@ -18,3 +18,4 @@ angular
     };
 });
 	 
+*/

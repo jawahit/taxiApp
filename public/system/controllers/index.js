@@ -1,4 +1,4 @@
-'use strict';
+/*'use strict';
 
 angular.module('taxiapp.system').controller('IndexController', ['$scope', 'Global', function ($scope, Global) {
     $scope.global = Global;
@@ -32,4 +32,4 @@ angular.module('taxiapp.system').controller('ContactCtrl', ['$scope', 'Global','
 	}
 	
 	
-}]);
+}]);*/
