@@ -1,7 +1,7 @@
 'use strict';
 
 module.exports = {
-    db: 'mongodb://nashville:nashville123#@oceanic.mongohq.com:10048/taxiapp_prod',
+    db: 'mongodb://localhost/mean-dev',
     app: {
         name: 'MEAN - FullStack JS - Development'
     },
@@ -33,7 +33,7 @@ module.exports = {
     smtpdetails:{
     	transporthost : 'smtp.gmail.com"',
         transportport: '465',
-        fromaddress: '',
+        fromaddress: 'nashvilleprofessionaltaxi@gmail.com',
         pass:''
     }
 };
